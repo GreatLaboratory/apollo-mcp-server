@@ -50,17 +50,17 @@ Both use [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) t
 
 You can run the Apollo MCP Server together with a graph in a local development environment with a single `rover dev` command. Rover starts an MCP Server that communicates via SSE transport.
 
-1. Install [Apollo Rover CLI](/rover/getting-started) v0.31 or later. 
+1. Install [Apollo Rover CLI](/rover/getting-started) v0.31 or later.
 1. From the root directory of your local repo, run `rover dev` to start a local graph, using `--mcp*` options to start and configure an Apollo MCP Server.
 
     ```sh showLineNumbers=false
       rover dev --supergraph-config ./graphql/TheSpaceDevs/supergraph.yaml \
-      --mcp --sse-port 5000 \
+      --mcp-sse-port 5000 \
       --mcp-operations ./graphql/TheSpaceDevs/operations/ExploreCelestialBodies.graphql ./graphql/TheSpaceDevs/operations/GetAstronautDetails.graphql ./graphql/TheSpaceDevs/operations/GetAstronautsCurrentlyInSpace.graphql ./graphql/TheSpaceDevs/operations/SearchUpcomingLaunches.graphql
-    ``` 
+    ```
 
     - `--mcp` starts an Apollo MCP Server
-    - `--sse-port` sets the port of the server's SSE transport 
+    - `--mcp-sse-port` sets the port of the server's SSE transport
     - `--mcp-operations` sets the list of operations
 
 1. Start MCP Inspector, then open a browser and go to [`http://127.0.0.1:6274`](http://127.0.0.1:6274):
@@ -96,7 +96,7 @@ You can run an Apollo MCP Server locally to communicate over stdio.
     --directory <absolute-path-to-MCP-example-dir>
     --schema api.graphql \
     --operations operations/ExploreCelestialBodies.graphql operations/GetAstronautDetails.graphql operations/GetAstronautsCurrentlyInSpace.graphql operations/SearchUpcomingLaunches.graphql \
-    --endpoint https://thespacedevs-production.up.railway.app/ 
+    --endpoint https://thespacedevs-production.up.railway.app/
     ```
 1. Open a browser and go to the Inspector URL at [`http://127.0.0.1:6274`](http://127.0.0.1:6274).
 1. Fill in the details in Inspector:
